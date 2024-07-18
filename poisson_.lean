@@ -17,3 +17,6 @@ structure ProbabilitySpace (Ω : Type) (F : EventSpace Ω) where
   countable_additive : ∀ (A B : set Ω), (∀ i, i ∈ A → i ∉ B) → toFun (A ∪ B) = toFun A + toFun B
 
 end probability
+
+def poisson_formula (λ : ℝ) (k : ℕ) : Prop :=
+  (λ^k) * real.exp (-λ) = (real.fact k)
